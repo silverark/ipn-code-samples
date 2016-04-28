@@ -59,6 +59,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 curl_setopt($ch, CURLOPT_FORBID_REUSE, 1);
 
+//With the upcoming security changes, only TLS is accepted for communication. Choose 5 or 6 
+curl_setopt($ch, CURLOPT_SSLVERSION, 6); //tls 1.2
+
 if(DEBUG == true) {
 	curl_setopt($ch, CURLOPT_HEADER, 1);
 	curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
